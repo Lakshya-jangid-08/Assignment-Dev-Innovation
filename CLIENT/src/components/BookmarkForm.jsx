@@ -35,9 +35,9 @@ const BookmarkForm = ({ bookmark, onSubmit, onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-lg w-full max-w-md">
-        <div className="p-6">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-3 sm:p-4 z-50">
+      <div className="bg-white rounded-lg w-full max-w-md max-h-[90vh] overflow-y-auto">
+        <div className="p-4 sm:p-6">
           <h3 className="text-lg font-semibold mb-4">
             {bookmark ? 'Edit Bookmark' : 'New Bookmark'}
           </h3>
@@ -107,11 +107,11 @@ const BookmarkForm = ({ bookmark, onSubmit, onClose }) => {
               </label>
             </div>
             
-            <div className="flex justify-end space-x-3">
+            <div className="flex flex-col sm:flex-row justify-end gap-2 sm:space-x-3">
               <button
                 type="button"
                 onClick={onClose}
-                className="px-4 py-2 border rounded-md hover:bg-gray-50"
+                className="px-4 py-2 border rounded-md hover:bg-gray-50 text-sm font-medium order-2 sm:order-1"
                 disabled={loading}
               >
                 Cancel
@@ -119,7 +119,7 @@ const BookmarkForm = ({ bookmark, onSubmit, onClose }) => {
               <button
                 type="submit"
                 disabled={loading}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md disabled:opacity-50"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium disabled:opacity-50 transition order-1 sm:order-2"
               >
                 {loading ? 'Saving...' : bookmark ? 'Update' : 'Save'}
               </button>

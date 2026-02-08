@@ -89,11 +89,11 @@ const Bookmarks = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-bold">Bookmarks</h1>
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4 mb-6">
+        <h1 className="text-2xl md:text-3xl font-bold">Bookmarks</h1>
         <button
           onClick={() => setShowForm(true)}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-3 md:px-4 py-2 rounded-md text-sm md:text-base font-medium transition w-full sm:w-auto"
         >
           + New Bookmark
         </button>
@@ -101,7 +101,7 @@ const Bookmarks = () => {
 
       {/* Search & Filter */}
       <div className="bg-white p-4 rounded-lg shadow mb-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               Search
@@ -150,7 +150,7 @@ const Bookmarks = () => {
           <p className="text-gray-500">No bookmarks found. Save your first bookmark!</p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {bookmarks.map((bookmark) => (
             <BookmarkCard
               key={bookmark._id}

@@ -9,17 +9,17 @@ const NoteCard = ({ note, onEdit, onDelete, onFavorite }) => {
 
   return (
     <div className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow">
-      <div className="flex justify-between items-start mb-2">
-        <h3 className="font-semibold text-lg truncate">{note.title}</h3>
+      <div className="flex justify-between items-start gap-2 mb-2">
+        <h3 className="font-semibold text-base md:text-lg truncate">{note.title}</h3>
         <button
           onClick={() => onFavorite(!note.favorite)}
-          className="text-red-500 hover:text-red-600"
+          className="text-red-500 hover:text-red-600 flex-shrink-0"
         >
           {note.favorite ? <MdFavorite/> : <MdFavoriteBorder/>}
         </button>
       </div>
       
-      <div className="text-gray-600 mb-4 max-h-32 overflow-y-auto pr-1">
+      <div className="text-gray-600 mb-4 max-h-32 overflow-y-auto pr-1 text-sm">
         <p className="whitespace-pre-wrap">
           {note.content}
         </p>
@@ -39,9 +39,9 @@ const NoteCard = ({ note, onEdit, onDelete, onFavorite }) => {
         </div>
       )}
       
-      <div className="flex justify-between items-center text-sm text-gray-500">
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 text-xs md:text-sm text-gray-500">
         <span>{formatDate(note.createdAt)}</span>
-        <div className="space-x-2">
+        <div className="space-x-2 w-full sm:w-auto">
           <button
             onClick={onEdit}
             className="text-blue-600 hover:text-blue-800"
